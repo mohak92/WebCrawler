@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class WebCrawler {
 	
@@ -26,6 +28,21 @@ public class WebCrawler {
 		while(!queue.isEmpty()) {
 			String v = this.queue.remove();
 			String rawHtml = readURL(v); 
+			
+			String regexp = "http://(\\w+\\.)*(\\w+)";
+			Pattern pattern = Pattern.compile(regexp);
+			Matcher matcher = pattern.matcher(rawHtml);
+			
+			while(matcher.find()) {
+				
+				String actualUrl = matcher.group();
+				
+				if(!discoveredWebsiteList.contains(actualUrl)) {
+					discoveredWebsiteList.add(actualUrl);
+					System.out.println("Website has been found with URL: " + actualUrl);
+					queue.add(actualUrl);
+				}
+			}
 		}
 	}
 
