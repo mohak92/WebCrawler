@@ -29,7 +29,7 @@ public class WebCrawler {
 			String v = this.queue.remove();
 			String rawHtml = readURL(v); 
 			
-			String regexp = "http://(\\w+\\.)*(\\w+)";
+			String regexp = "https://(\\w+\\.)*(\\w+)";
 			Pattern pattern = Pattern.compile(regexp);
 			Matcher matcher = pattern.matcher(rawHtml);
 			
@@ -63,7 +63,7 @@ public class WebCrawler {
 			
 			in.close();
 		} catch (Exception e) {
-			
+			//e.printStackTrace();
 		}
 		return rawHtml;
 	}
