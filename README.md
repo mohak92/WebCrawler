@@ -11,6 +11,7 @@ The world wide web can be represented as a directed graph
 With BFS we can traverse the web this is called a web crawler like Google Spider.
 
 ## Screenshot
+![](screenshot/webcrawler.gif)
 
 ## Algorithm
 * To traverse the www we will be using BFS algorithm.
@@ -19,7 +20,7 @@ With BFS we can traverse the web this is called a web crawler like Google Spider
 ## Local Setup
 * Git clone / download project.
 * Import project in eclipse.
-* Open App.java navigate to line no. 9 and add a URL starting with "https://www.anywebsite.com" and save.
+* Open App.java navigate to line no. 9 and add a URL starting with https://www. and save.
 * Run App.java.
 
 ## Built with
