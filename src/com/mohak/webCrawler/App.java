@@ -6,7 +6,7 @@ public class App {
 		
 		WebCrawler webCrawler = new WebCrawler();
 		
-		String rootUrl = "https://www.bbc.com";
+		String rootUrl = "";
 		
 		webCrawler.discoverWeb(rootUrl);
 
